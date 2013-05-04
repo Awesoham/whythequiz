@@ -1,34 +1,47 @@
 source 'https://rubygems.org'
-gem 'rails', '3.2.13'
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'uglifier', '>= 1.0.3'
-end
+
+gem 'rails'
 gem 'jquery-rails'
-gem "thin", ">= 1.5.0"
-gem "mongoid", ">= 3.1.2"
-gem "haml-rails", ">= 0.4"
-gem "html2haml", ">= 1.0.1", :group => :development
-gem "rspec-rails", ">= 2.12.2", :group => [:development, :test]
-gem "capybara", ">= 2.0.3", :group => :test
-gem "database_cleaner", ">= 1.0.0.RC1", :group => :test
-gem "mongoid-rspec", ">= 1.7.0", :group => :test
-gem "email_spec", ">= 1.4.0", :group => :test
-gem "guard-bundler", ">= 1.0.0", :group => :development
-gem "guard-rails", ">= 0.4.0", :group => :development
-gem "guard-rspec", ">= 2.5.2", :group => :development
-gem "rb-inotify", ">= 0.9.0", :group => :development, :require => false
-gem "rb-fsevent", ">= 0.9.3", :group => :development, :require => false
-gem "rb-fchange", ">= 0.0.6", :group => :development, :require => false
-gem "factory_girl_rails", ">= 4.2.0", :group => [:development, :test]
-gem "bootstrap-sass", ">= 2.3.0.0"
-gem "devise", ">= 2.2.3"
-gem "cancan", ">= 1.6.9"
-gem "rolify", ">= 3.2.0"
-gem "simple_form", ">= 2.1.0"
-gem "quiet_assets", ">= 1.0.2", :group => :development
-gem "figaro", ">= 0.6.3"
-gem "better_errors", ">= 0.7.2", :group => :development
-gem "binding_of_caller", ">= 0.7.1", :group => :development, :platforms => [:mri_19, :rbx]
-gem "hub", ">= 1.10.2", :require => nil, :group => [:development]
+gem "thin"
+gem "mongoid"
+gem "haml-rails"
+gem "bootstrap-sass"
+gem "devise"
+gem "cancan"
+gem "rolify"
+gem "simple_form"
+gem "figaro"
+
+group :assets do
+	gem 'sass-rails',   '~> 3.2.3'
+	gem 'coffee-rails'
+	gem 'uglifier'
+end
+
+group :development do
+	gem "html2haml" group: :development
+	gem "guard-bundler" group: :development
+	gem "guard-rails" group: :development
+	gem "guard-rspec" group: :development
+	gem "rb-inotify" group: :development, require: false
+	gem "rb-fsevent" group: :development, require: false
+	gem "rb-fchange" group: :development, require: false
+	gem "quiet_assets" group: :development
+	gem "better_errors" group: :development
+	gem "binding_of_caller" group: :development, platforms: [:mri_19, :rbx]
+	gem "hub" require: nil, group: :development
+
+end
+
+group :test do
+	gem "capybara" group: :test
+	gem "database_cleaner" group: :test
+	gem "mongoid-rspec" group: :test
+	gem "email_spec" group: :test
+end
+
+group :development, :test do
+	gem "rspec-rails" group: [:development, :test]
+	gem "factory_girl_rails" group: [:development, :test]
+end	
+
