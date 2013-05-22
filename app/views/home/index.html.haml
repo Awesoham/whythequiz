@@ -1,4 +1,7 @@
 %h3 Home
-- @users.each do |user|
+- @users.each do |u|
   %p
-    User: #{link_to user.name, user}
+    User: #{link_to u.name, u}
+- @quizzes.each do |q|
+  %p
+    Quiz: #{link_to q.name, q}    

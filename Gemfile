@@ -29,8 +29,7 @@ group :development do
 	gem "quiet_assets", group: :development
 	gem "better_errors", group: :development
 	gem "binding_of_caller", group: :development, platforms: [:mri_19, :rbx]
-	gem "hub" require: nil, group: :development
-
+	gem "hub", require: nil, group: :development
 end
 
 group :test do

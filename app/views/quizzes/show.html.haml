@@ -1,0 +1,7 @@
+%h1=@quiz.name
+%table.table
+	%tbody
+		%tr
+			- @quiz.questions.each do |q|
+				%td=q.text
+				%td=q.answer
